@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Configurations>Debug;Release;CompileCMS</Configurations>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>OpenCodeDev</Authors>
+    <Copyright>OpenCodeDev © 2021 All Rights Reserved.</Copyright>
+    <Description>This package is the Core Engine for the Server Side (GRPC) of NetCMS. It can be used to develop plugins and build extensive api endpoints.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OpenCodeDev.NetCMS.Core.Attributes\OpenCodeDev.NetCMS.Core.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

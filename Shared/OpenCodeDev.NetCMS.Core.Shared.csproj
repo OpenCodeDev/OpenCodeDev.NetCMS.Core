@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Configurations>Debug;Release;CompileCMS</Configurations>
+    <Product>OpenCodeDev © 2021 All Rights Reserved.</Product>
+    <Description>This is the abstraction level of the Core Engine of NetCMS and this allows for both client and server to share resources such as Data Annotation, GRPC endpoints and Model/Forms Validator.</Description>
+  </PropertyGroup>
+
+</Project>

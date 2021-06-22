@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31229.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCodeDev.NetCMS.Core.Server", "Server\OpenCodeDev.NetCMS.Core.Server.csproj", "{BE0A086A-641A-463D-B0C8-2B4ACB108881}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCodeDev.NetCMS.Core.Shared", "Shared\OpenCodeDev.NetCMS.Core.Shared.csproj", "{CD93E03D-37DE-417B-A059-3AC05F51AB9F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCodeDev.NetCMS.Core.Admin", "Admin\OpenCodeDev.NetCMS.Core.Admin.csproj", "{1A9A8BBB-BDFF-48AA-A520-BCF56D328A8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CompileCMS|Any CPU = CompileCMS|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE0A086A-641A-463D-B0C8-2B4ACB108881}.CompileCMS|Any CPU.ActiveCfg = CompileCMS|Any CPU
+		{BE0A086A-641A-463D-B0C8-2B4ACB108881}.CompileCMS|Any CPU.Build.0 = CompileCMS|Any CPU
+		{BE0A086A-641A-463D-B0C8-2B4ACB108881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE0A086A-641A-463D-B0C8-2B4ACB108881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE0A086A-641A-463D-B0C8-2B4ACB108881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE0A086A-641A-463D-B0C8-2B4ACB108881}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD93E03D-37DE-417B-A059-3AC05F51AB9F}.CompileCMS|Any CPU.ActiveCfg = CompileCMS|Any CPU
+		{CD93E03D-37DE-417B-A059-3AC05F51AB9F}.CompileCMS|Any CPU.Build.0 = CompileCMS|Any CPU
+		{CD93E03D-37DE-417B-A059-3AC05F51AB9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD93E03D-37DE-417B-A059-3AC05F51AB9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD93E03D-37DE-417B-A059-3AC05F51AB9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD93E03D-37DE-417B-A059-3AC05F51AB9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A9A8BBB-BDFF-48AA-A520-BCF56D328A8B}.CompileCMS|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A9A8BBB-BDFF-48AA-A520-BCF56D328A8B}.CompileCMS|Any CPU.Build.0 = Debug|Any CPU
+		{1A9A8BBB-BDFF-48AA-A520-BCF56D328A8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A9A8BBB-BDFF-48AA-A520-BCF56D328A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A9A8BBB-BDFF-48AA-A520-BCF56D328A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A9A8BBB-BDFF-48AA-A520-BCF56D328A8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A763CAC8-4D77-440C-95A5-55D8CF48EF08}
+	EndGlobalSection
+EndGlobal

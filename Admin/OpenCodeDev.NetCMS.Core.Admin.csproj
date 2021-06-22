@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Copyright>OpenCodeDev © 2021 All Rights Reserved.</Copyright>
+    <Authors>OpenCodeDev</Authors>
+    <Description>This package is the Core Engine for Adminstration Side of NetCMS.</Description>
+  </PropertyGroup>
+
+</Project>
