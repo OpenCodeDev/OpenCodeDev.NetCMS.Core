@@ -15,7 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OpenCodeDev.NetCMS.Core.Attributes\OpenCodeDev.NetCMS.Core.Shared.csproj" />
+    <ProjectReference Include="..\Shared\OpenCodeDev.NetCMS.Core.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Api\Internal\" />
   </ItemGroup>
 
 </Project>

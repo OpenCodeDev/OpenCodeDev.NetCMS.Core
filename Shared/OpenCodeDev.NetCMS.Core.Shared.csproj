@@ -6,5 +6,29 @@
     <Product>OpenCodeDev © 2021 All Rights Reserved.</Product>
     <Description>This is the abstraction level of the Core Engine of NetCMS and this allows for both client and server to share resources such as Data Annotation, GRPC endpoints and Model/Forms Validator.</Description>
   </PropertyGroup>
+  <ItemGroup>
 
+    <PackageReference Include="Grpc.Core" Version="2.37.1" requireReinstallation="true" />
+
+    <PackageReference Include="Grpc.Net.Client" Version="2.37.0" requireReinstallation="true" />
+
+    <PackageReference Include="Grpc.Net.Client.Web" Version="2.37.0" requireReinstallation="true" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="5.0.5" requireReinstallation="true" />
+
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" requireReinstallation="true" />
+
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.11.0" requireReinstallation="true" />
+
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" requireReinstallation="true" />
+
+    <PackageReference Include="OpenCodeDev.EntityFramework.Permissions.Grpc.DataAnnotations" Version="1.0.0" requireReinstallation="true" />
+
+    <PackageReference Include="protobuf-net.Grpc" Version="1.0.152" requireReinstallation="true" />
+
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.8.1" requireReinstallation="true" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reflection\" />
+  </ItemGroup>
 </Project>
