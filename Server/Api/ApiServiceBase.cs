@@ -17,26 +17,26 @@ namespace OpenCodeDev.NetCMS.Core.Server.Api
         /// <param name="a">First Object</param>
         /// <param name="b">Value String</param>
         /// <param name="typef">Type of Data (int, float, double...)</param>
-        protected virtual bool ConditionTypeDelegator(ConditionTypes conditionType, object a, string b, FieldTypes typef)
+        protected virtual bool ConditionTypeDelegator(ConditionTypes conditionType, object a, string b, Type typef)
         {
             switch (conditionType)
             {
                 case ConditionTypes.Contains:
-                    break;
+                    return Contains(a, b, typef);
                 case ConditionTypes.EndsWith:
-                    break;
+                    return Endswith(a, b, typef);
                 case ConditionTypes.StartsWith:
-                    break;
+                    return StartsWith(a, b, typef);
                 case ConditionTypes.Equals:
-                    break;
+                    return Equals(a, b, typef);
                 case ConditionTypes.GreaterThan:
                     return GreaterThan(a, b, typef);
                 case ConditionTypes.LesserThan:
-                    break;
+                    return LesserThan(a, b, typef);
                 case ConditionTypes.GreaterEqualThan:
-                    break;
+                    return (Equals(a, b, typef) || GreaterThan(a, b, typef));
                 case ConditionTypes.LesserEqualThan:
-                    break;
+                    return (Equals(a, b, typef) || LesserThan(a, b, typef));
                 default:
                     break;
             }

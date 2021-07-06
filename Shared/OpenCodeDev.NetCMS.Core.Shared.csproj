@@ -16,6 +16,8 @@
 
     <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="5.0.5" requireReinstallation="true" />
 
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
+
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" requireReinstallation="true" />
 
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.11.0" requireReinstallation="true" />

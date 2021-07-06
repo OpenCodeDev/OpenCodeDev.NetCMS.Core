@@ -52,6 +52,11 @@ namespace OpenCodeDev.NetCMS.Core.Shared.Extensions
         public static bool ValidationPropTypeAllowed(this PropertyInfo prop)
         {
             string type = prop.GetUnderlyingPropertyTypeIfPossible().ToString();
+           return ValidationPropTypeAllowed(type);
+        }
+
+        public static bool ValidationPropTypeAllowed(this string prop){
+            string type = prop;
             if (typeof(string).ToString() == type || typeof(int).ToString() == type || typeof(float).ToString() == type ||
                 typeof(double).ToString() == type || typeof(Guid).ToString() == type || typeof(long).ToString() == type)
             {
@@ -60,6 +65,6 @@ namespace OpenCodeDev.NetCMS.Core.Shared.Extensions
             return false;
         }
 
-      
+
     }
 }

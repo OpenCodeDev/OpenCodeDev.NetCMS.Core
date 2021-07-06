@@ -3,60 +3,59 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Grpc.Core;
+
 using OpenCodeDev.NetCMS.Core.Shared.Api.Messages;
 namespace OpenCodeDev.NetCMS.Core.Server.Api
 {
     public partial class ApiServiceBase
     {
-
         /// <summary>
         /// Handle int
         /// </summary>
-        protected virtual bool GreaterThan(int a, int b)
+        protected virtual bool Equals(int a, int b)
         {
-            return a > b;
+            return a.Equals(b);
         }
 
         /// <summary>
         /// Handle float
         /// </summary>
-        protected virtual bool GreaterThan(float a, float b)
+        protected virtual bool Equals(float a, float b)
         {
-            return a > b;
+            return a.Equals(b);
         }
 
         /// <summary>
         /// Handle boolean
         /// </summary>
-        protected virtual bool GreaterThan(bool a, bool b)
+        protected virtual bool Equals(bool a, bool b)
         {
-            return (a == true && b == false);
+            return a.Equals(b);
         }
 
         /// <summary>
         /// Handle double
         /// </summary>
-        protected virtual bool GreaterThan(double a, double b)
+        protected virtual bool Equals(double a, double b)
         {
-            return a > b;
+            return a.Equals(b);
         }
 
 
         /// <summary>
         /// Handle long
         /// </summary>
-        protected virtual bool GreaterThan(long a, long b)
+        protected virtual bool Equals(long a, long b)
         {
-            return a > b;
+            return a.Equals(b);
         }
 
         /// <summary>
         /// Handle string
         /// </summary>
-        protected virtual bool GreaterThan(string a, string b)
+        protected virtual bool Equals(string a, string b)
         {
-            return a.Length > b.Length;
+            return a.Equals(b);
         }
 
         /// <summary>
@@ -65,33 +64,33 @@ namespace OpenCodeDev.NetCMS.Core.Server.Api
         /// <param name="a">Value 1</param>
         /// <param name="b">Value 2 (Always String)</param>
         /// <param name="dataType">Data Type (generic primitive like Guid, Int, Float, Double, String...)</param>
-        protected virtual bool GreaterThan(object a, string b, Type dataType)
+        protected virtual bool Equals(object a, string b, Type dataType)
         {
             if (dataType.Equals(typeof(string)))
             {
-                return GreaterThan((string)a, b);
+                return Equals((string)a, b);
             }
             else if (dataType.Equals(typeof(int)))
             {
-                return GreaterThan((int)a, int.Parse(b));
+                return Equals((int)a, int.Parse(b));
             }
             else if (dataType.Equals(typeof(float)))
             {
-                return GreaterThan((float)a, float.Parse(b));
+                return Equals((float)a, float.Parse(b));
             }
             else if (dataType.Equals(typeof(double)))
             {
-                return GreaterThan((double)a, double.Parse(b));
+                return Equals((double)a, double.Parse(b));
             }
             else if (dataType.Equals(typeof(bool)))
             {
-                return GreaterThan((bool)a, bool.Parse(b));
+                return Equals((bool)a, bool.Parse(b));
             }
             else if (dataType.Equals(typeof(long)))
             {
-                return GreaterThan((long)a, long.Parse(b));
+                return Equals((long)a, long.Parse(b));
             }
-            throw new Exception($"Function GreaterThan doesn't support type {dataType}. See Documentation for more details.");
+            throw new Exception($"Function LesserThan doesn't support type {dataType}. See Documentation for more details.");
         }
     }
 }
