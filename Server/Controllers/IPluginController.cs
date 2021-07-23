@@ -9,6 +9,7 @@ namespace OpenCodeDev.NetCMS.Core.Plugin
     public interface IPluginController
     {
 
+        Task ActionRegister(string name, Task action);
         /// <summary>
         /// Check if action is currently registered.
         /// </summary>
@@ -21,7 +22,7 @@ namespace OpenCodeDev.NetCMS.Core.Plugin
         /// </summary>
         /// <param name="name">Name of the action.</param>
         /// <returns></returns>
-        bool ActionContainSync(string name);
+        bool ActionContain(string name);
 
         /// <summary>
         /// Execute a registered action
@@ -46,7 +47,7 @@ namespace OpenCodeDev.NetCMS.Core.Plugin
         /// Check Synchronously if a filter is currently registered.
         /// </summary>
         /// <param name="name">Name of the filter</param>
-        bool FilterContainSync(string name);
+        bool FilterContain(string name);
 
         /// <summary>
         /// Run a registered filter.

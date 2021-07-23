@@ -17,7 +17,7 @@ namespace OpenCodeDev.NetCMS.Core.Server.Api
         /// <param name="a">First Object</param>
         /// <param name="b">Value String</param>
         /// <param name="typef">Type of Data (int, float, double...)</param>
-        protected virtual bool ConditionTypeDelegator(ConditionTypes conditionType, object a, string b, Type typef)
+        public virtual bool ConditionTypeDelegator(ConditionTypes conditionType, object a, string b, Type typef)
         {
             switch (conditionType)
             {
@@ -34,9 +34,9 @@ namespace OpenCodeDev.NetCMS.Core.Server.Api
                 case ConditionTypes.LesserThan:
                     return LesserThan(a, b, typef);
                 case ConditionTypes.GreaterEqualThan:
-                    return (Equals(a, b, typef) || GreaterThan(a, b, typef));
+                    return (typef == typeof(string) ? Equals(a, b, typef) : (!GreaterThan(a, b, typef) && !LesserThan(a, b, typef))) || GreaterThan(a, b, typef);
                 case ConditionTypes.LesserEqualThan:
-                    return (Equals(a, b, typef) || LesserThan(a, b, typef));
+                    return (typef == typeof(string) ? Equals(a, b, typef) : (!GreaterThan(a, b, typef) && !LesserThan(a, b, typef))) || LesserThan(a, b, typef);
                 default:
                     break;
             }

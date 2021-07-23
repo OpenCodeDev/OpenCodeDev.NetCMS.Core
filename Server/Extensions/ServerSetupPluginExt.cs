@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OpenCodeDev.NetCms.Core.Extensions
 {
-    public static class Middleware
+    public static class ServerSetupPluginExt
     {
         /// <summary>
         /// Locate and Find Backend Plugins

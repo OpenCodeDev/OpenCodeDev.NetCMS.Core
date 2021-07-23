@@ -21,6 +21,12 @@ namespace OpenCodeDev.NetCMS.Core.Shared.Api.Messages
         LesserEqualThan
     }
 
+    public enum OrderType
+    {
+        Ascending,
+        Descending
+    }
+
     /// <summary>
     /// Type of the Selected Field (will be casted and if fails will throw a validation error)
     /// </summary>
@@ -40,9 +46,26 @@ namespace OpenCodeDev.NetCMS.Core.Shared.Api.Messages
     /// </summary>
     public enum LogicTypes
     {
+        /// <summary>
+        /// And will start a new set: (Set1) & (Set2) OR (Set1) & (Set2 || Set3) <br/>
+        /// if you choose and it means a new set and also all the AndAlso or OrElse will be part of that new set.
+        /// </summary>
         And,
+        /// <summary>
+        /// AndAlso is && operator. (Set1 == "" && Set2 == "") <br/>
+        /// A set of condition starts with And or Or and is followed by other condition of the set with AndAlso or OrElse.
+        /// </summary>
+        AndAlso,
+        /// <summary>
+        /// Or will start a new set of conditions: (Set1) | (Set2)... <br/>
+        /// This is good to chain multiple possible conditions.
+        /// </summary>
         Or,
-        End
+        /// <summary>
+        /// AndAlso is || operator. (Set1 == "" || Set2 == "") <br/>
+        /// A set of condition starts with And or Or and is followed by other condition of the set with AndAlso or OrElse.
+        /// </summary>
+        OrElse
     }
 
     /// <summary>

@@ -59,6 +59,14 @@ namespace OpenCodeDev.NetCMS.Core.Server.Api
         }
 
         /// <summary>
+        /// Handle Guids
+        /// </summary>
+        protected virtual bool Equals(Guid a, Guid b)
+        {
+            return a.Equals(b);
+        }
+
+        /// <summary>
         /// Evaluate 2 Values passed based on its type, you should refer to official documentation for understanding how certain types are evaluated.
         /// </summary>
         /// <param name="a">Value 1</param>
@@ -89,6 +97,10 @@ namespace OpenCodeDev.NetCMS.Core.Server.Api
             else if (dataType.Equals(typeof(long)))
             {
                 return Equals((long)a, long.Parse(b));
+            }
+            else if (dataType.Equals(typeof(Guid)))
+            {
+                return Equals((Guid)a, Guid.Parse(b));
             }
             throw new Exception($"Function LesserThan doesn't support type {dataType}. See Documentation for more details.");
         }
