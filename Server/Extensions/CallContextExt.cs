@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OpenCodeDev.NetCMS.Core.Server.Extensions
+namespace OpenCodeDev.NetCms.Core.Server.Extensions
 {
     public static class CallContextExt
     {

@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Api\Internal\" />
+    <Folder Include="Plugins\" />
   </ItemGroup>
 
 </Project>

@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OpenCodeDev.NetCMS.Core.Plugin
+namespace OpenCodeDev.NetCMS.Core.Server.Plugin.Options.Controllers
 {
     /// <summary>
     /// Main Function of the Plugin System.
@@ -15,7 +15,63 @@ namespace OpenCodeDev.NetCMS.Core.Plugin
         private static Dictionary<string, Func<object[], Task>> ActionsVoid { get; set; } = new Dictionary<string, Func<object[], Task>>();
         private static Dictionary<string, Func<object[], Task<object>>> Actions { get; set; } = new Dictionary<string, Func<object[], Task<object>>>();
         private static Dictionary<string, List<Func<object, Task<object>>>> Filters { get; set; } = new Dictionary<string, List<Func<object, Task<object>>>>();
+        private static Dictionary<string, object> Plugins { get; set; } = new Dictionary<string, object>();
 
+        /// <summary>
+        /// Check if plugin is available
+        /// </summary>
+        /// <param name="name">Assembly's name</param>
+        public bool PluginContain(string name){
+            return Plugins.ContainsKey(name);
+        }
+
+        /// <summary>
+        /// Get Plugin Server Base Object
+        /// </summary>
+        /// <param name="name">Assembly's name</param>
+        public PluginServerBase PluginGetBase(string name){
+            return (PluginServerBase)PluginGetObject(name);
+        }
+
+        /// <summary>
+        /// Get Object that Must be Casted to known type <br/>
+        /// The object will be the class Main in the plugin which is derived of PluginServerBase.
+        /// </summary>
+        /// <param name="name">Assembly's name</param>
+        public object PluginGetObject(string name){
+            if (!Plugins.ContainsKey(name))
+            {
+                throw new Exception($"Plugin {name} is not registered.");
+            }
+            return Plugins[name];
+        }
+
+        /// <summary>
+        /// Register plugin to be globally accessible.
+        /// </summary>
+        /// <param name="obj">Main class type (derived from PluginServerBase)</param>
+        public void PluginRegister(object obj){
+            string name = obj.GetType().Assembly.GetName().Name;
+            if (Plugins.ContainsKey(name))
+            {
+                throw new Exception($"Plugin {name} is already registered. You cannot add twice the same plugin.");
+            }
+            Plugins.Add(name, obj);
+        }
+        
+        /// <summary>
+        /// Unregister Plugin from active list.
+        /// </summary>
+        public void PluginUnregister(object obj)
+        {
+            string name = obj.GetType().Assembly.GetName().Name;
+            if (Plugins.ContainsKey(name))
+            { 
+            Plugins.Remove(name); 
+            }
+           
+        }
+        
         public bool ActionContain(string name)
         {
             return (Actions.ContainsKey(name) || ActionsVoid.ContainsKey(name));
