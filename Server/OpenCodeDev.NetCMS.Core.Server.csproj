@@ -19,8 +19,4 @@
     <ProjectReference Include="..\Shared\OpenCodeDev.NetCMS.Core.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Plugins\" />
-  </ItemGroup>
-
 </Project>
