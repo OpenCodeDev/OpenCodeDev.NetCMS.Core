@@ -22,5 +22,34 @@ namespace OpenCodeDev.NetCMS.Core.Server.Plugin.JSON
         /// Fetch: During fetch, prop can be passed to search for an entry.
         /// </summary>
         public List<string> ArgumentOf { get; set; }
+
+        /// <summary>
+        /// Domain area (base namespace)
+        /// </summary>
+        public string Domain { get; set; }
+
+        /// <summary>
+        /// Model Relation has targeted.
+        /// </summary>
+        public string Model { get; set; }
+
+        /// <summary>
+        /// Type of relationship <br/>
+        /// 1-0, 1-1, X-0, X-1 and X-X
+        /// </summary>
+        public string Type { get; set; }
+
+        /// <summary>
+        /// Child can only have one dominant parent. <br/>
+        /// if left is deleted it will delete or set null right automatically.
+        /// </summary>
+        public bool Dominant { get; set; }
+
+        /// <summary>
+        /// Cascade: Will delete child relation if parent is deleted (1-1 Only). <br/>
+        /// Null (Default): Will set to null child object if parent is deleted (means relation is optional)<br/>
+        /// Note: X-0, 1-0 and X-X (Delete the binding agent)
+        /// </summary>
+        public string DeleteBehavior { get; set; } = null;
     }
 }

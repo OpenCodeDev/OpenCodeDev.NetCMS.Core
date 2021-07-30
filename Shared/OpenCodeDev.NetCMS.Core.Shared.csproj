@@ -30,7 +30,4 @@
 
     <PackageReference Include="System.ServiceModel.Primitives" Version="4.8.1" requireReinstallation="true" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reflection\" />
-  </ItemGroup>
 </Project>
